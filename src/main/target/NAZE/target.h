@@ -123,9 +123,9 @@
 #define INVERTER
 #define DISPLAY
 
-#define USE_USART1
-#define USE_USART2
-#define USE_USART3
+#define USE_UART1
+#define USE_UART2
+#define USE_UART3
 #define USE_SOFTSERIAL1
 #define USE_SOFTSERIAL2
 #define SERIAL_PORT_COUNT 5
@@ -137,12 +137,12 @@
 #define SOFTSERIAL_2_TIMER_RX_HARDWARE 6 // PWM 7
 #define SOFTSERIAL_2_TIMER_TX_HARDWARE 7 // PWM 8
 
-// USART3 only on NAZE32_SP - Flex Port
-#define USART3_RX_PIN Pin_11
-#define USART3_TX_PIN Pin_10
-#define USART3_GPIO GPIOB
-#define USART3_APB1_PERIPHERALS RCC_APB1Periph_USART3
-#define USART3_APB2_PERIPHERALS RCC_APB2Periph_GPIOB
+// UART3 only on NAZE32_SP - Flex Port
+#define UART3_RX_PIN Pin_11
+#define UART3_TX_PIN Pin_10
+#define UART3_GPIO GPIOB
+#define UART3_APB1_PERIPHERALS RCC_APB1Periph_USART3
+#define UART3_APB2_PERIPHERALS RCC_APB2Periph_GPIOB
 
 #define USE_I2C
 #define I2C_DEVICE (I2CDEV_2)
@@ -169,11 +169,14 @@
 #define EXTERNAL1_ADC_GPIO_PIN      GPIO_Pin_5
 #define EXTERNAL1_ADC_CHANNEL       ADC_Channel_5
 
-#define GPS
 
 #define LED_STRIP
 #define LED_STRIP_TIMER TIM3
+#define WS2811_DMA_TC_FLAG           DMA1_FLAG_TC6
+#define WS2811_DMA_HANDLER_IDENTIFER DMA1_CH6_HANDLER
 
+#define GPS
+#define GTUNE
 #define BLACKBOX
 #define TELEMETRY
 #define SERIAL_RX
@@ -181,12 +184,11 @@
 #define USE_CLI
 
 #define SPEKTRUM_BIND
-// USART2, PA3
+// UART2, PA3
 #define BIND_PORT  GPIOA
 #define BIND_PIN   Pin_3
 
 #define USE_SERIAL_1WIRE
-#define USE_SERIAL_1WIRE_CLI
 
 // STM32F103CBT6-LQFP48 Pin30 (PA9) TX - PC3 connects to onboard CP2102 RX
 #define S1W_TX_GPIO         GPIOA
